@@ -1,10 +1,7 @@
-## This project is created with SvelteKit and TailwindCSS
+# About
 
-# How
-```
-git clone [this repo]
-npm i
-npm run dev
-```
+This is a simple Popcat like website for math teacher Pop. I thought it would be funny.
 
-> Note: change the "name" in the package.json to your desired name too
+## How
+
+This project is created with Sveltekit and TailwindCSS from a [template](https://github.com/PathonScript/sveltekit-template) I made.
