@@ -1,14 +1,15 @@
 import {db} from './firebase'
-import { doc, increment, setDoc } from 'firebase/firestore'
+import { doc, increment, setDoc, collection } from 'firebase/firestore'
 
-export async function Increment() {
-  const userRef = doc(db, 'pops', 'total')
-  
+export async function Increment(guild = 'Neutral', num) {
+  const totalRef = doc(db, 'pops', 'total')
+  const guildRef = collection(db, 'pops/total', 'guilds')
 
-      await setDoc(userRef, {
-        clicks: increment(1)
+      await setDoc(totalRef, {
+        clicks: increment(num)
       }, {merge: true})
-      console.log("that's done")
-}
 
-export let clicks = doc(db, 'pops', 'total')
+      await setDoc(doc(guildRef, guild), {
+        clicks: increment(num)
+      }, {merge: true})
+}

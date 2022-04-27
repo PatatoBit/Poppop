@@ -6,3 +6,4 @@ export const clicks = writable(+((browser && localStorage.getItem('clicks')) || 
 clicks.subscribe((val) => {
   if (browser) return (localStorage.clicks = `${val}`);
 });
+
